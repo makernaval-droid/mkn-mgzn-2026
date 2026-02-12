@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKN Magazin | Edición 2026</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/dflip@1.0.33/css/dflip.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/dflip@1.0.33/css/themify-icons.min.css" rel="stylesheet">
+    
+    <style>
+        body { background-color: #001F3F; margin: 0; overflow: hidden; font-family: 'Courier New', Courier, monospace; }
+        #mkn-flipbook-container { height: 100vh; width: 100vw; }
+        .logo-overlay { position: absolute; top: 20px; left: 20px; z-index: 1000; color: #00E5FF; }
+    </style>
+</head>
+<body>
+
+    <div class="logo-overlay">
+        <strong>$ mkn_publisher --view</strong>
+    </div>
+
+    <div id="mkn-flipbook-container"></div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/dflip@1.0.33/js/dflip.min.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+            // Configuración del Flipbook para el PDF de MKN
+            var pdfUrl = "magazine.pdf"; // Asegúrate de que tu PDF se llame exactamente así
+            var options = {
+                webgl: true,
+                hard: "cover", // Portada dura
+                overwritePDFLinks: true,
+                duration: 800,
+                direction: 1, // LTR
+                backgroundColor: "#001F3F"
+            };
+            
+            var dFlip = $("#mkn-flipbook-container").dfly(pdfUrl, options);
+        });
+    </script>
+</body>
+</html>
