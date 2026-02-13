@@ -1,16 +1,23 @@
-<script>
-    jQuery(document).ready(function () {
-        // Usamos la ruta relativa ./ para asegurar que GitHub encuentre el archivo
-        var pdfUrl = "./magazine.pdf"; 
-        
-        var options = {
-            webgl: true,
-            autoEnableSearch: true,
-            height: '100%',
-            duration: 700
-        };
-        
-        // Inicialización
-        var dFlip = $("#mkn-flipbook-container").dfly(pdfUrl, options);
-    });
-</script>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MKN Magazin | Edición Digital</title>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; width: 100%; background-color: #001F3F; overflow: hidden; font-family: sans-serif; }
+        .mkn-header { background: #00E5FF; color: #001F3F; padding: 8px 20px; font-family: monospace; font-size: 12px; font-weight: bold; display: flex; justify-content: space-between; }
+        .viewer-container { height: calc(100vh - 35px); width: 100%; }
+        iframe { width: 100%; height: 100%; border: none; }
+    </style>
+</head>
+<body>
+    <div class="mkn-header">
+        <span>$ mkn_status: ONLINE</span>
+        <span>EDICIÓN 2026.02</span>
+    </div>
+    <div class="viewer-container">
+        <iframe src="https://docs.google.com/gview?url=https://makernaval-droid.github.io/mkn-mgzn-2026/magazine.pdf&embedded=true"></iframe>
+    </div>
+</body>
+</html>
