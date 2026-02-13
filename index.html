@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MKN Magazin | Edición Digital</title>
+    <title>MKN Magazin | Visor Digital</title>
     <style>
-        body, html { margin: 0; padding: 0; height: 100%; width: 100%; background-color: #001F3F; overflow: hidden; font-family: sans-serif; }
-        .mkn-header { background: #00E5FF; color: #001F3F; padding: 8px 20px; font-family: monospace; font-size: 12px; font-weight: bold; display: flex; justify-content: space-between; }
-        .viewer-container { height: calc(100vh - 35px); width: 100%; }
-        iframe { width: 100%; height: 100%; border: none; }
+        body, html { margin: 0; padding: 0; height: 100%; background: #001F3F; font-family: 'Courier New', monospace; }
+        .mkn-header { background: #00E5FF; color: #001F3F; padding: 10px 20px; font-size: 14px; font-weight: bold; display: flex; justify-content: space-between; position: absolute; width: 100%; z-index: 10; box-sizing: border-box; }
+        .container { height: 100vh; width: 100vw; display: flex; align-items: center; justify-content: center; padding-top: 40px; box-sizing: border-box; }
+        /* El visor nativo de navegador es el más fiable en GitHub Pages */
+        embed { width: 90%; height: 85%; border: 2px solid #00E5FF; box-shadow: 0 0 20px rgba(0,229,255,0.3); }
+        .no-pdf { color: white; text-align: center; margin-top: 50px; }
     </style>
 </head>
 <body>
     <div class="mkn-header">
-        <span>$ mkn_status: ONLINE</span>
-        <span>EDICIÓN 2026.02</span>
+        <span>$ mkn_publisher --v3.1.0</span>
+        <span>ESTADO: CONECTADO</span>
     </div>
-    <div class="viewer-container">
-        <iframe src="https://docs.google.com/gview?url=https://makernaval-droid.github.io/mkn-mgzn-2026/magazine.pdf&embedded=true"></iframe>
+
+    <div class="container">
+        <embed src="./magazine.pdf" type="application/pdf">
     </div>
+
+    <script>
+        console.log("MKN Magazin: Verificando integridad del PDF...");
+    </script>
 </body>
 </html>
